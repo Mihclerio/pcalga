@@ -86,7 +86,7 @@ void sarpePas()
     for(int i=1;i<len;i++)
         f[snk[i].x][snk[i].y]=2;
 
-    f[snk[0].x][snk[0].y]=1;
+    if(!(snk[0].x<0 || snk[0].x==20 || snk[0].y<0 || snk[0].y==20)) f[snk[0].x][snk[0].y]=1;
 
     int cur=0;
     for(int i=0;i<20;i++)
