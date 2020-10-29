@@ -52,16 +52,16 @@ void var7()
 
 void exemple4()
 {
-    printf("4 - Calculez la moyenne arithmetique des elements divisibles a 4 \nde la surface hachuree\n");
-    printf("5 - Remplacez tous les elements de la surface non-hachuree avec des zeros.\n");
-    printf("6 - Determinez la valeur et la position des elements maximaux de chaque ligne \nde la surface hachuree.\n");
+    printf("5 - Calculez la moyenne arithmetique des elements divisibles a 4 \nde la surface hachuree\n");
+    printf("6 - Remplacez tous les elements de la surface non-hachuree avec des zeros.\n");
+    printf("7 - Determinez la valeur et la position des elements maximaux de chaque ligne \nde la surface hachuree.\n");
 }
 
 void exemple7()
 {
-    printf("4 - Calculez la moyenne arithmetique des elements du perimetre \nde la surface hachuree\n");
-    printf("5 - Determinez le nombre des elements impairs de chaque colonne \nde la surface hachuree\n");
-    printf("6 - Determinez les elements maximaux de chaque zone de la surface non-hachuree\n");
+    printf("5 - Calculez la moyenne arithmetique des elements du perimetre \nde la surface hachuree\n");
+    printf("6 - Determinez le nombre des elements impairs de chaque colonne \nde la surface hachuree\n");
+    printf("7 - Determinez les elements maximaux de chaque zone de la surface non-hachuree\n");
 }
 
 void drawMatrice()
@@ -125,6 +125,15 @@ void setVal()
         for(int j=0;j<n;j++) {
             d[i][j] = rand()-rand();
         }
+}
+
+void setValMan()
+{
+    system("cls");
+    printf("entrez %d numeros de matrice\n", n*n);
+
+    for(int i=0;i<n;i++)
+        for(int j=0;j<n;j++) scanf("%d", &d[i][j]);
 }
 
 void setTaille()
@@ -318,7 +327,8 @@ int main()
 
                 printf("1 - Donner la taille de la matrice d[n][n]\n");
                 printf("2 - choisir le numero de tache\n");
-                printf("3 - changer les valeurs dans la matrice\n");
+                printf("3 - changer les valeurs dans la matrice (random)\n");
+                printf("4 - changer les valeurs dans la matrice (Manuel)\n");
 
                 switch(k) {
 
@@ -329,14 +339,15 @@ int main()
                 printf("q - quit\n");
 
                 c = getch();
-            } while(!((c>='1' && c<='3') || (c=='q') || (c>='4' && c<='6' && k>0)));
+            } while(!((c>='1' && c<='4') || (c=='q') || (c>='4' && c<='7' && k>0)));
 
             switch(c) {
 
                 case '1': setTaille(); break;
                 case '2': setVar(); break;
                 case '3': setVal(); break;
-                case '4':
+                case '4': setValMan(); break;
+                case '5':
 
                     switch(k) {
 
@@ -344,7 +355,7 @@ int main()
                         case 2: rezolv7_1(); break;
                     }
                 break;
-                case '5':
+                case '6':
 
                     switch(k) {
 
@@ -352,7 +363,7 @@ int main()
                         case 2: rezolv7_2(); break;
                     }
                 break;
-                case '6':
+                case '7':
 
                     switch(k) {
 
